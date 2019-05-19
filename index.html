@@ -25,15 +25,16 @@
       <div id="streamPlayer"></div>
       <script type="text/javascript">
         var options = {
-          width: 400,
-          height: 400,
-          channel: "firstinspires",
+          width: window.innerWidth - 30,
+          height: window.innerHeight - 80,
+          channel: "northernlion",
         };
         var player = new Twitch.Player("streamPlayer", options);
         player.setVolume(0.0);
+        player.play();
       </script>
     </div>
-    <div class="container-fluid invisible" id="scheduleView">
+    <div class="container-fluid d-none" id="scheduleView">
       <div class="row">
         <div class="col-lg-12 col-md-12">
           <table id="scheduleTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -74,30 +75,12 @@
                 </th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td class="text-center">
-                  <h5>1</h5>
-                </td>
-                <td>
-                  <h5>401 - Copperhead Robotics</h5>
-                </td>
-                <td class="text-center">
-                  <h5>12 - 0 - 0</h5>
-                </td>
-                <td class="text-center">
-                  <h5>0</h5>
-                </td>
-                <td class="text-center">
-                  <h5>3.8</h5>
-                </td>
-              </tr>
-            </tbody>
+            <tbody></tbody>
           </table>
         </div>
       </div>
     </div>
-    <div class="container-fluid invisible" id="ranksView">
+    <div class="container-fluid d-none" id="ranksView">
       <div class="row">
         <div class="col-lg-12 col-md-12">
           <table id="ranksTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -120,25 +103,7 @@
                 </th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td class="text-center">
-                  <h5>1</h5>
-                </td>
-                <td>
-                  <h5>401 - Copperhead Robotics</h5>
-                </td>
-                <td class="text-center">
-                  <h5>12 - 0 - 0</h5>
-                </td>
-                <td class="text-center">
-                  <h5>0</h5>
-                </td>
-                <td class="text-center">
-                  <h5>3.8</h5>
-                </td>
-              </tr>
-            </tbody>
+            <tbody></tbody>
           </table>
         </div>
       </div>
@@ -161,11 +126,13 @@
         "searching": false,
         "ordering": false,
         "paging": false,
-        "info": false
+        "info": false,
+        "columns": [{}]
       });
       $('.dataTables_length').addClass('bs-select');
     });
   </script>
+  <script src="logic.js"></script>
 </body>
 
 </html>
