@@ -1,31 +1,28 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "name": "PC2-TV",
+  "version": "0.0.1",
+  "description": "A TV display for the Pit Commander system",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/PitCommander/PC2-TV",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "rethink",
+    "iot",
+    "display"
   ],
-  "author": "GitHub",
+  "author": "pchild",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^5.0.0"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.8.2",
     "bootstrap": "^4.3.1",
     "bs-custom-file-input": "^1.3.2",
     "datatables.net": "^1.10.19",
     "es6-promise": "^4.2.6",
-    "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
     "jquery": "^3.4.1",
     "mdbootstrap": "^4.8.1",
