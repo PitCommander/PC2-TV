@@ -10,9 +10,6 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/mdb.min.css" rel="stylesheet">
   <link href="css/addons/datatables.min.css" rel="stylesheet">
-
-  <!-- Custom styles -->
-  <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -70,12 +67,17 @@
       </div>
     </div>
   </main>
+  <script>
+    tvSettings = require('./settings.json');
 
-  <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
-  <script type="text/javascript" src="js/popper.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-  <script type="text/javascript" src="js/addons/datatables.min.js"></script>
+    window.$ = window.jQuery = require('jquery');
+    window.Waves = require('node-waves');
+    const dt = require('datatables.net')();
+    require('popper.js');
+    require('bootstrap');
+    const bsCustomFileInput = require('bs-custom-file-input');
+    require('mdbootstrap/js/mdb');
+  </script>
   <script>
     $(document).ready(function () {
       $('#ranksTable').DataTable({
