@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>PitCommander2 TV</title>
-  <link rel="stylesheet" href="css/custom.css">
   <link rel="stylesheet" href="css/fa_all.css">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/mdb.min.css" rel="stylesheet">
   <link href="css/addons/datatables.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
 </head>
 
 <body>
@@ -21,20 +21,28 @@
   </header>
 
   <main class="mt-2">
+
+    <!--Twitch stream view -->
     <div class="container-fluid d-none" id="streamView">
-      <script src="https://player.twitch.tv/js/embed/v1.js"></script>
       <div id="streamPlayer"></div>
-      <script type="text/javascript">
-        var options = {
-          width: window.innerWidth - 30,
-          height: window.innerHeight - 80,
-          channel: "northernlion",
-        };
-        var player = new Twitch.Player("streamPlayer", options);
-        player.setVolume(0.0);
-        player.play();
-      </script>
     </div>
+
+    <!-- Timer and next match info -->
+    <div class="container-fluid d-none" id="timerView">
+      <div id=""></div>
+    </div>
+
+    <!-- Logo view, placeholder for when no network-->
+    <div class="container-fluid logo-view d-none" id="logoView">
+      <img src="img/logo.png" class="img-fluid" alt="Responsive image">
+    </div>
+
+    <!-- Specs view, not sure how this will be implemented yet, look at templating-->
+    <div class="container-fluid d-none" id="specsView">
+      <div id=""></div>
+    </div>
+
+    <!-- Schedule display view-->
     <div class="container-fluid d-none" id="scheduleView">
       <div class="row">
         <div class="col-lg-12 col-md-12">
@@ -42,6 +50,8 @@
         </div>
       </div>
     </div>
+
+    <!-- Ranks view-->
     <div class="container-fluid d-none" id="ranksView">
       <div class="row">
         <div class="col-lg-12 col-md-12">
@@ -51,85 +61,19 @@
     </div>
   </main>
   <script>
-    tvSettings = require('./settings.json');
-
+    //Deps for main app UI
     window.$ = window.jQuery = require('jquery');
     window.Waves = require('node-waves');
     const dt = require('datatables.net')();
     require('popper.js');
+    var moment = require('moment');
     require('bootstrap');
     const bsCustomFileInput = require('bs-custom-file-input');
     require('mdbootstrap/js/mdb');
   </script>
-  <script>
-    $(document).ready(function () {
-
-      //Handle the RANKS table
-      $('#ranksTable').DataTable({
-        "searching": false,
-        "ordering": false,
-        "paging": false,
-        "info": false,
-        "columns": [
-          {
-            data: "rank",
-            className: 'table-center',
-            title: "Rank"
-          },
-          {
-            data: "teamName",
-            className: "table-left",
-            title: "Team"
-          },
-          {
-            data: "teamRecord",
-            className: 'table-center',
-            title: "Record (W-L-T)"
-          },
-          {
-            data: "matchesLeft",
-            className: 'table-center',
-            title: "Matches Left"
-          },
-          {
-            data: "rpAverage",
-            className: 'table-center',
-            title: "RP Average"
-          }]
-      });
-
-      //Handle the SCHEDULE table
-      $('#scheduleTable').DataTable({
-        "searching": false,
-        "ordering": false,
-        "paging": false,
-        "info": false,
-        "columns": [
-          {
-            data: "matchString",
-            className: 'table-center',
-            title: "Match"
-          },
-          {
-            data: "ally1",
-          },
-          {
-            data: "teamRecord",
-            className: 'table-text'
-          },
-          {
-            data: "matchesLeft",
-            className: 'table-text'
-          },
-          {
-            data: "rpAverage",
-            className: 'table-text'
-          }]
-      });
-      $('.dataTables_length').addClass('bs-select');
-    });
-  </script>
-  <script src="logic.js"></script>
+  <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+  <script src="js/tables.js"></script>
+  <script src="js/logic.js"></script>
 </body>
 
 </html>
