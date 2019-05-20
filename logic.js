@@ -35,7 +35,11 @@ r.connect({
 });
 
 function updateRankings(err, rankingData) {
+
+  //TODO: this code needs logic to paginate and auto transition the ranks based on how many teams can be seen at once.
+
   console.log(rankingData.new_val.value);
+
   let table = $('#ranksTable').DataTable();
   table.clear();
   table.rows.add(rankingData.new_val.value);
