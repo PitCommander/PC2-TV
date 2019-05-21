@@ -4,7 +4,9 @@
   "description": "A TV display for the Pit Commander system",
   "main": "js/main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "repository": "https://github.com/PitCommander/PC2-TV",
   "keywords": [
@@ -21,10 +23,6 @@
       "buildResources": "build"
     },
     "publish": null
-  },
-  "scripts": {
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder"
   },
   "author": "pchild",
   "license": "CC0-1.0",
