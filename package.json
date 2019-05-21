@@ -29,7 +29,8 @@
   "author": "pchild",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^5.0.0"
+    "electron": "^5.0.0",
+    "electron-builder": "^20.40.2"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
@@ -45,8 +46,5 @@
     "rethinkdb": "^2.3.3",
     "underscore": "^1.9.1",
     "wow.js": "^1.2.2"
-  },
-  "devDependencies": {
-    "electron-builder": "^20.40.2"
   }
 }
