@@ -14,6 +14,18 @@
     "display",
     "frc"
   ],
+  "build": {
+    "appId": "pc2.tv",
+    "productName": "PC2-TV",
+    "directories": {
+      "buildResources": "build"
+    },
+    "publish": null
+  },
+  "scripts": {
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
   "author": "pchild",
   "license": "CC0-1.0",
   "devDependencies": {
@@ -33,5 +45,8 @@
     "rethinkdb": "^2.3.3",
     "underscore": "^1.9.1",
     "wow.js": "^1.2.2"
+  },
+  "devDependencies": {
+    "electron-builder": "^20.40.2"
   }
 }
